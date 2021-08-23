@@ -6,6 +6,7 @@ const indexedDB =
   window.shimIndexedDB;
 
   let db;
+  let budgetVersion;
   const request = indexedDB.open("budget", budgetVersion || 1);
   
   request.onupgradeneeded = ({ target }) => {
