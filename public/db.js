@@ -1,6 +1,12 @@
-  let db;
-  let budgetVersion;
-  const request = indexedDB.open("budget", budgetVersion || 1);
+const indexedDB =
+window.indexedDB ||
+window.mozIndexedDB ||
+window.webkitIndexedDB ||
+window.msIndexedDB ||
+window.shimIndexedDB;
+ 
+ let db;
+  const request = indexedDB.open("budget", 1);
   
   request.onupgradeneeded = ({ target }) => {
     let db = target.result;
