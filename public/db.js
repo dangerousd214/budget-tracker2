@@ -1,10 +1,3 @@
-const indexedDB =
-  window.indexedDB ||
-  window.mozIndexedDB ||
-  window.webkitIndexedDB ||
-  window.msIndexedDB ||
-  window.shimIndexedDB;
-
   let db;
   let budgetVersion;
   const request = indexedDB.open("budget", budgetVersion || 1);
